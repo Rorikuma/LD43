@@ -7,6 +7,7 @@ TagManager:
   - WallLeft
   - WallRight
   - Shrine
+  - Defender
   layers:
   - Default
   - TransparentFX

@@ -2,10 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum Phase { Kid, Adult, Old }
+
 public class AI_Stats : MonoBehaviour {
+
+    public Phase phase = Phase.Kid;
 
     public float MovementSpeed = 100;
     public int MaxHealth = 3;
+    public float AttackRange = 500;
 
     int currentHealth = 3;
 

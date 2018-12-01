@@ -27,7 +27,6 @@ public class AI_Defender : MonoBehaviour {
         {
             walls = GameObject.FindGameObjectsWithTag("WallLeft");
         }
-        //Debug.Log(walls);
         if(walls.Length == 0)
         {
             // TODO: Find furthest building.

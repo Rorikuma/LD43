@@ -37,9 +37,11 @@ public class AI_Defender_Movement : MonoBehaviour {
 
     private void Update()
     {
-        if(reachedDestination == false)
+        if (reachedDestination == false)
         {
-            if(Vector2.Distance(myTransform.position, targetPosition) < 8)
+            if ((brain.Assignment == Side.Right && myTransform.position.x > targetPosition.x) ||
+                (brain.Assignment == Side.Left && myTransform.position.x < targetPosition.x) ||
+                Vector2.Distance(myTransform.position, targetPosition) < 8)
             {
                 myTransform.position = targetPosition;
                 reachedDestination = true;
