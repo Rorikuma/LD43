@@ -8,10 +8,31 @@ public class AI_Defender_Movement : MonoBehaviour {
     Transform myTransform;
     AI_Defender brain;
     AI_Stats stats;
+    CapsuleCollider2D capsule;
 
     Vector2 targetPosition = Vector2.zero;
 
     bool reachedDestination = true;
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Defender" && collision.gameObject.GetComponent<AI_Defender>().Assignment != brain.Assignment)
+        {
+            StartCoroutine(TurnOffCollision(0.5f));
+        }
+    }
+
+    IEnumerator TurnOffCollision(float t)
+    {
+        capsule.enabled = false;
+        float grav = rb.gravityScale;
+        rb.gravityScale = 0;
+
+        yield return new WaitForSeconds(t);
+
+        rb.gravityScale = grav;
+        capsule.enabled = true;
+    }
 
     private void Awake()
     {
@@ -19,6 +40,7 @@ public class AI_Defender_Movement : MonoBehaviour {
         myTransform = GetComponent<Transform>();
         brain = GetComponent<AI_Defender>();
         stats = GetComponent<AI_Stats>();
+        capsule = GetComponent<CapsuleCollider2D>();
     }
 
     public void GetNewPosition(Vector2 pos)
