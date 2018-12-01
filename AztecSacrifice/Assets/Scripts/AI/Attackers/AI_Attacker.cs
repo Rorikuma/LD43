@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum AttackerState { Moving, Attacking }
+public enum AIState { Moving, Idle, Attacking }
 
 public class AI_Attacker : MonoBehaviour {
 
-    public AttackerState state = AttackerState.Moving;
+    public AIState State = AIState.Moving;
 
     AI_Attacker_Movement movement;
 
@@ -19,7 +19,7 @@ public class AI_Attacker : MonoBehaviour {
         if(collision.gameObject.tag == "WallRight" || collision.gameObject.tag == "WallLeft" 
             || collision.gameObject.tag == "Defender")
         {
-            state = AttackerState.Attacking;
+            State = AIState.Attacking;
             movement.Stop();
             target = collision.gameObject.transform;
             // TODO: Attack.
@@ -58,7 +58,7 @@ public class AI_Attacker : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        if(state == AttackerState.Moving)
+        if(State == AIState.Moving)
         {
             movement.Move();
         }

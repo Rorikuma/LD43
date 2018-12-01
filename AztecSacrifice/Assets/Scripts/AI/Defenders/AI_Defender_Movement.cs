@@ -12,7 +12,8 @@ public class AI_Defender_Movement : MonoBehaviour {
 
     Vector2 targetPosition = Vector2.zero;
 
-    bool reachedDestination = true;
+    [HideInInspector]
+    public bool reachedDestination = true;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -67,6 +68,7 @@ public class AI_Defender_Movement : MonoBehaviour {
             {
                 myTransform.position = targetPosition;
                 reachedDestination = true;
+                brain.State = AIState.Idle;
             }
             else
             {

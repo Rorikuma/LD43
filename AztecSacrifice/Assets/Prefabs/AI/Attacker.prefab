@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 61817704933907956}
   m_Layer: 0
   m_Name: Attacker
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -146,10 +146,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1cf7446bcd8f354997401cfe4715d7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  phase: 0
+  Age: 0
   MovementSpeed: 100
   MaxHealth: 3
   AttackRange: 500
+  AttackStrength: 1000
 --- !u!114 &114520961470671358
 MonoBehaviour:
   m_ObjectHideFlags: 1
