@@ -27,7 +27,6 @@ public class AI_Stats : MonoBehaviour {
     {
         MaxHealth = kidHealth;
         currentHealth = MaxHealth;
-        Firerate = kidFirerate;
     }
 
     public void UpgradeUnit()

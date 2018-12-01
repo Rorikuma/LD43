@@ -166,6 +166,7 @@ MonoBehaviour:
   - {fileID: 1893168916642730, guid: 9545c3e5d72f1b240bfc462533463ff5, type: 2}
   - {fileID: 1893168916642730, guid: 9545c3e5d72f1b240bfc462533463ff5, type: 2}
   - {fileID: 1893168916642730, guid: 9545c3e5d72f1b240bfc462533463ff5, type: 2}
+  Barrel: {fileID: 4083852631889442}
 --- !u!114 &114750307015828240
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -193,9 +194,9 @@ MonoBehaviour:
   Age: 0
   MovementSpeed: 100
   MaxHealth: 5
-  AttackRange: 500
-  AttackStrength: 1000
-  Firerate: 0.5
+  AttackRange: 350
+  AttackStrength: 50000
+  Firerate: 1
 --- !u!212 &212628753309441928
 SpriteRenderer:
   m_ObjectHideFlags: 1
