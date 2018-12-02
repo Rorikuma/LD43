@@ -8,6 +8,9 @@ public class SpawnDefenders : MonoBehaviour {
 
     public GameObject DefenderPrefab;
 
+    public SpriteRenderer SR;
+    public Sprite Notification;
+
     bool hasKid = false;
     bool collidingPlayer = false;
 
@@ -30,6 +33,8 @@ public class SpawnDefenders : MonoBehaviour {
     {
         GameObject g = SimplePool.Spawn(DefenderPrefab, transform.position, Quaternion.identity);
         hasKid = false;
+
+        SR.sprite = null;
     }
 
 	public void NewDay()
@@ -39,6 +44,8 @@ public class SpawnDefenders : MonoBehaviour {
         if(rand <= ChanceToSpawn)
         {
             hasKid = true;
+
+            SR.sprite = Notification;
         }
     }
 
