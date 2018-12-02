@@ -13,6 +13,7 @@ public class AI_Stats : MonoBehaviour {
     public float AttackRange = 500;
     public float AttackStrength = 1000;
     public float Firerate = 0.5f;
+    public int damage = 1;
 
     int kidHealth = 5;
     int adultHealth = 10;

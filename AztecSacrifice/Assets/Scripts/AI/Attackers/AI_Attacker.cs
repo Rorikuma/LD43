@@ -14,7 +14,9 @@ public class AI_Attacker : MonoBehaviour {
     Transform shrine;
     Transform myTransform;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    AI_Attacker attackerInFront;
+
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "WallRight" || collision.gameObject.tag == "WallLeft" 
             || collision.gameObject.tag == "Defender")
@@ -22,7 +24,15 @@ public class AI_Attacker : MonoBehaviour {
             State = AIState.Attacking;
             movement.Stop();
             target = collision.gameObject.transform;
-            // TODO: Attack.
+        }
+        else if(collision.gameObject.tag == "Enemy")
+        {
+            if(collision.gameObject.GetComponent<AI_Attacker>().State == AIState.Attacking)
+            {
+                State = AIState.Idle;
+                attackerInFront = collision.gameObject.GetComponent<AI_Attacker>();
+                movement.Stop();
+            }
         }
     }
     
@@ -53,7 +63,10 @@ public class AI_Attacker : MonoBehaviour {
 
     private void Update()
     {
-        
+        if((target == null && State != AIState.Idle) || (attackerInFront != null && attackerInFront.State == AIState.Moving))
+        {
+            State = AIState.Moving;
+        }
     }
 
     private void FixedUpdate()

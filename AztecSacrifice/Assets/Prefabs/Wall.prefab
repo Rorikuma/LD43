@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4048207238793084}
   - component: {fileID: 114067603357248688}
   - component: {fileID: 61113608099402882}
+  - component: {fileID: 114910744491601016}
   m_Layer: 8
   m_Name: Wall
   m_TagString: WallRight
@@ -107,6 +108,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36f2f8952db10f84bab6b1eae9265f42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114910744491601016
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1075055845115626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1cf7446bcd8f354997401cfe4715d7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Age: 0
+  MovementSpeed: 100
+  MaxHealth: 15
+  AttackRange: 500
+  AttackStrength: 1000
+  Firerate: 0.5
 --- !u!212 &212440663701153506
 SpriteRenderer:
   m_ObjectHideFlags: 1
