@@ -321,8 +321,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GrabPosition: {fileID: 4555832028001006}
-  isColliding: 0
+  Sprites: []
+  isCollidingWithDefender: 0
+  isShrineColliding: 0
   Defender: {fileID: 0}
+  isHolding: 0
 --- !u!212 &212842738776077346
 SpriteRenderer:
   m_ObjectHideFlags: 1
