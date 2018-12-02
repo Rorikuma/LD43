@@ -197,6 +197,7 @@ MonoBehaviour:
   AttackRange: 350
   AttackStrength: 50000
   Firerate: 1
+  damage: 1
 --- !u!212 &212628753309441928
 SpriteRenderer:
   m_ObjectHideFlags: 1
