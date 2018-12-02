@@ -40,20 +40,20 @@ public class GrabDefenders : MonoBehaviour {
 
         // TODO: Add sprites.
 
-        //switch (grabbedPhase)
-        //{
-        //    case Phase.Kid:
-        //        GrabPosition.GetComponent<SpriteRenderer>().sprite = Sprites[0];
-        //        break;
+        switch (grabbedPhase)
+        {
+            case Phase.Kid:
+                GrabPosition.GetComponent<SpriteRenderer>().sprite = Sprites[0];
+                break;
 
-        //    case Phase.Adult:
-        //        GrabPosition.GetComponent<SpriteRenderer>().sprite = Sprites[1];
-        //        break;
+            case Phase.Adult:
+                GrabPosition.GetComponent<SpriteRenderer>().sprite = Sprites[1];
+                break;
 
-        //    case Phase.Old:
-        //        GrabPosition.GetComponent<SpriteRenderer>().sprite = Sprites[2];
-        //        break;
-        //}
+            case Phase.Old:
+                GrabPosition.GetComponent<SpriteRenderer>().sprite = Sprites[2];
+                break;
+        }
 
         Destroy(Defender);
         Defender = null;
@@ -67,25 +67,25 @@ public class GrabDefenders : MonoBehaviour {
 
         // TODO: Add sacrifice points.
 
-        //switch (grabbedPhase)
-        //{
-        //    case Phase.Kid:
-        //        GrabPosition.GetComponent<SpriteRenderer>().sprite = null;
-        //        break;
+        switch (grabbedPhase)
+        {
+            case Phase.Kid:
+                GrabPosition.GetComponent<SpriteRenderer>().sprite = null;
+                break;
 
-        //    case Phase.Adult:
-        //        GrabPosition.GetComponent<SpriteRenderer>().sprite = null;
-        //        break;
+            case Phase.Adult:
+                GrabPosition.GetComponent<SpriteRenderer>().sprite = null;
+                break;
 
-        //    case Phase.Old:
-        //        GrabPosition.GetComponent<SpriteRenderer>().sprite = null;
-        //        break;
-        //}
+            case Phase.Old:
+                GrabPosition.GetComponent<SpriteRenderer>().sprite = null;
+                break;
+        }
     }
 
     private void Update()
     {
-        if(isCollidingWithDefender && Input.GetButtonDown("Grab"))
+        if(isCollidingWithDefender && Input.GetButtonDown("Grab") && isHolding == false)
         {
             grabbedPhase = Defender.GetComponent<AI_Stats>().Age;
 
