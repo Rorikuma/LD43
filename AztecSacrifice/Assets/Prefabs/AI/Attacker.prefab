@@ -154,6 +154,10 @@ MonoBehaviour:
   AttackStrength: 1000
   Firerate: 1
   damage: 1
+  KidFirerate: 2
+  AdultFirerate: 1
+  OldFirerate: 1.5
+  CoinPrefab: {fileID: 1752171307109420, guid: ba88981eaf991c84fa1524b3bc6447d1, type: 2}
 --- !u!114 &114520961470671358
 MonoBehaviour:
   m_ObjectHideFlags: 1

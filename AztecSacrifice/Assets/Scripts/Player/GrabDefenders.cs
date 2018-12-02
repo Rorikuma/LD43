@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class GrabDefenders : MonoBehaviour {
 
+    public int KidPoints = 2;
+    public int AdultPoints = 4;
+    public int OldPoints = 1;
+
     public GameObject GrabPosition;
     public Sprite[] Sprites;
 
@@ -15,6 +19,8 @@ public class GrabDefenders : MonoBehaviour {
     public GameObject Defender;
     [HideInInspector]
     public bool isHolding = false;
+
+    PlayerStats stats;
 
     Phase grabbedPhase;
 
@@ -60,25 +66,29 @@ public class GrabDefenders : MonoBehaviour {
     void Sacrifice()
     {
         isHolding = false;
-
-        Debug.Log("Sacrifice" + grabbedPhase);
-
-        // TODO: Add sacrifice points.
-
+        
         switch (grabbedPhase)
         {
             case Phase.Kid:
+                stats.IncreaseFaith(KidPoints);
                 GrabPosition.GetComponent<SpriteRenderer>().sprite = null;
                 break;
 
             case Phase.Adult:
+                stats.IncreaseFaith(AdultPoints);
                 GrabPosition.GetComponent<SpriteRenderer>().sprite = null;
                 break;
 
             case Phase.Old:
+                stats.IncreaseFaith(OldPoints);
                 GrabPosition.GetComponent<SpriteRenderer>().sprite = null;
                 break;
         }
+    }
+
+    private void Awake()
+    {
+        stats = GetComponent<PlayerStats>();
     }
 
     private void Update()

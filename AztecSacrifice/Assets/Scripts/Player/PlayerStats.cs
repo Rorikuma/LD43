@@ -5,12 +5,33 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour {
 
     public int MaxHealth = 20;
+    public int FaithPoints = 0;
+    public int Gold = 0;
 
     int currentHealth = 1;
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Gold")
+        {
+            ChangeGold();
+            Destroy(collision.gameObject);
+        }
+    }
 
     private void Awake()
     {
         currentHealth = MaxHealth;
+    }
+
+    public void ChangeGold(int g = 1)
+    {
+        Gold += g;
+    }
+
+    public void IncreaseFaith(int i)
+    {
+        FaithPoints += i;
     }
 
     public void TakeDamage(int dmg)

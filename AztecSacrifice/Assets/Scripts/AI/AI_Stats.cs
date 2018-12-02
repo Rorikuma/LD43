@@ -18,39 +18,54 @@ public class AI_Stats : MonoBehaviour {
     int kidHealth = 5;
     int adultHealth = 10;
     int oldHealth = 8;
-    float kidFirerate = 0.5f;
-    float adultFirerate = 0.5f;
-    float oldFirerate = 0.5f;
+
+    public float KidFirerate = 2f;
+    public float AdultFirerate = 1f;
+    public float OldFirerate = 1.5f;
+
+    public GameObject CoinPrefab;
 
     int currentHealth = 5;
 
+    Transform myTransform;
+    
     private void Start()
     {
+        myTransform = this.transform;
         MaxHealth = kidHealth;
         currentHealth = MaxHealth;
     }
 
-    public void UpgradeUnit()
+    public void IncreaseAge()
     {
         if(Age == Phase.Kid)
         {
             Age = Phase.Adult;
             MaxHealth = adultHealth;
             currentHealth = adultHealth;
-            Firerate = adultFirerate;
+            Firerate = AdultFirerate;
         }
-        if(Age == Phase.Adult)
+        else if(Age == Phase.Adult)
         {
             Age = Phase.Old;
             MaxHealth = oldHealth;
             currentHealth = oldHealth;
-            Firerate = oldFirerate;
+            Firerate = OldFirerate;
         }
     }
 
     void Die()
     {
+        if(gameObject.tag == "Enemy")
+        {
+            DropGold();
+        }
         Destroy(gameObject);
+    }
+
+    void DropGold(int g = 1)
+    {
+        SimplePool.Spawn(CoinPrefab, myTransform.position, Quaternion.identity);
     }
 
     public void TakeDamage(int dmg = 1)

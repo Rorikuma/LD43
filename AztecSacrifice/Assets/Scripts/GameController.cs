@@ -21,6 +21,13 @@ public class GameController : MonoBehaviour {
         {
             h.NewDay();
         }
+
+        GameObject[] defenders = GameObject.FindGameObjectsWithTag("Defender");
+
+        foreach(GameObject g in defenders)
+        {
+            g.GetComponent<AI_Stats>().IncreaseAge();
+        }
     }
 
     private void Start()

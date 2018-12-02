@@ -10,6 +10,7 @@ TagManager:
   - Defender
   - Enemy
   - House
+  - Gold
   layers:
   - Default
   - TransparentFX
