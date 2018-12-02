@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class SpawnDefenders : MonoBehaviour {
 
-	
+	public void SpawnKids()
+    {
+        Debug.Log("spawning");
+    }
 
 }

@@ -13,6 +13,16 @@ public class GameController : MonoBehaviour {
 
     public SpriteRenderer NightSprite;
 
+    void NewDay()
+    {
+        SpawnDefenders[] houses = FindObjectsOfType<SpawnDefenders>();
+
+        foreach(SpawnDefenders h in houses)
+        {
+            h.SpawnKids();
+        }
+    }
+
     private void Start()
     {
         NightSprite.color = new Color(NightSprite.color.r, NightSprite.color.g, NightSprite.color.b, 0);
@@ -28,7 +38,6 @@ public class GameController : MonoBehaviour {
             {
                 time = DayTime;
                 halfDay += 1;
-                day += 1;
             }
         }
         else
@@ -37,6 +46,8 @@ public class GameController : MonoBehaviour {
 
             if (time <= 0)
             {
+                // New Day
+
                 time = 0;
                 halfDay += 1;
                 day += 1;
