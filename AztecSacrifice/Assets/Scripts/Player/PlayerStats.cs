@@ -23,6 +23,7 @@ public class PlayerStats : MonoBehaviour {
         {
             currentHealth = 0;
         }
+        //Debug.Log(currentHealth);
     }
 
     void Die()

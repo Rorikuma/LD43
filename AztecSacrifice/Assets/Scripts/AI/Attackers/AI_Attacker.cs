@@ -37,7 +37,6 @@ public class AI_Attacker : MonoBehaviour {
         else if(collision.gameObject.transform.root.tag == "Player")
         {
             State = AIState.Attacking;
-            Debug.Log("Player");
             movement.Stop();
             target = collision.gameObject.transform.root;
         }
