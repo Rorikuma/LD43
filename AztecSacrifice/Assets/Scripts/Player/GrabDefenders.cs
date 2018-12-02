@@ -37,9 +37,7 @@ public class GrabDefenders : MonoBehaviour {
     void GrabDefender()
     {
         isHolding = true;
-
-        // TODO: Add sprites.
-
+        
         switch (grabbedPhase)
         {
             case Phase.Kid:
