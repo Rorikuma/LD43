@@ -52,6 +52,10 @@ public class AI_Stats : MonoBehaviour {
             currentHealth = oldHealth;
             Firerate = OldFirerate;
         }
+        else if(Age == Phase.Old)
+        {
+            Die();
+        }
     }
 
     void Die()

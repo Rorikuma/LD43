@@ -75,6 +75,7 @@ GameObject:
   - component: {fileID: 114268274195266272}
   - component: {fileID: 114350645722690936}
   - component: {fileID: 114744112797432130}
+  - component: {fileID: 114655261539463786}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -157,7 +158,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1893427702143852}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -382, y: 0.25, z: 0}
+  m_LocalPosition: {x: -197, y: 0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4612072668113686}
@@ -298,6 +299,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 20
+  FaithPoints: 0
+  Gold: 0
 --- !u!114 &114397033948640536
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -309,6 +312,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acfbf320538eb394f95a022a2293fbec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114655261539463786
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1893427702143852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e268c3e95b30c324fa6356a8e0e6c488, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HousePrefab: {fileID: 1595657006667898, guid: 5fdc3c3e76d41124981c1dbfc0017543,
+    type: 2}
+  WallPrefab: {fileID: 1075055845115626, guid: 09d156401fd92254f9eb533b79802537, type: 2}
+  FarmPrefab: {fileID: 1718939514716762, guid: 2700139aef961f740b6be94ee531b6f9, type: 2}
 --- !u!114 &114744112797432130
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -320,6 +338,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cac960666a2284a42b5a6daa7ca5defd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KidPoints: 2
+  AdultPoints: 4
+  OldPoints: 1
   GrabPosition: {fileID: 1905734642952962}
   Sprites:
   - {fileID: 21300000, guid: 43073307af6b175468fe51e7b6a382a5, type: 3}

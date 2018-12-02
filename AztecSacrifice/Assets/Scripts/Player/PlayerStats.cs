@@ -7,6 +7,7 @@ public class PlayerStats : MonoBehaviour {
     public int MaxHealth = 20;
     public int FaithPoints = 0;
     public int Gold = 0;
+    public int Food = 0;
 
     int currentHealth = 1;
 
@@ -32,6 +33,11 @@ public class PlayerStats : MonoBehaviour {
     public void IncreaseFaith(int i)
     {
         FaithPoints += i;
+    }
+
+    public void ChangeFood(int f = 1)
+    {
+        Food += f;
     }
 
     public void TakeDamage(int dmg)

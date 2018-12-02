@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameController : MonoBehaviour {
+public class GManager : MonoBehaviour
+{
 
     public float DayTime = 240;
     public float MaxAlpha = 0.5f;
 
-    int day = 1;
+    public int Day = 1;
     int halfDay = 0;
     float time = 0;
 
@@ -17,16 +18,23 @@ public class GameController : MonoBehaviour {
     {
         SpawnDefenders[] houses = FindObjectsOfType<SpawnDefenders>();
 
-        foreach(SpawnDefenders h in houses)
+        foreach (SpawnDefenders h in houses)
         {
             h.NewDay();
         }
 
         GameObject[] defenders = GameObject.FindGameObjectsWithTag("Defender");
 
-        foreach(GameObject g in defenders)
+        foreach (GameObject g in defenders)
         {
             g.GetComponent<AI_Stats>().IncreaseAge();
+        }
+
+        GameObject[] farms = GameObject.FindGameObjectsWithTag("Farm");
+        
+        foreach (GameObject g in farms)
+        {
+            g.GetComponent<Farm>().NewDay();
         }
     }
 
@@ -58,7 +66,7 @@ public class GameController : MonoBehaviour {
                 NewDay();
                 time = 0;
                 halfDay += 1;
-                day += 1;
+                Day += 1;
             }
         }
 

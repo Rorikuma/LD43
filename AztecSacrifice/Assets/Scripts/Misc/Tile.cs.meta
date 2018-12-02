@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 6d187d4829d2aec45962f55ac05a56d6
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - HousePrefab: {fileID: 1595657006667898, guid: 5fdc3c3e76d41124981c1dbfc0017543,
+      type: 2}
+  - WallPrefab: {fileID: 1075055845115626, guid: 09d156401fd92254f9eb533b79802537,
+      type: 2}
+  - FarmPrefab: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
