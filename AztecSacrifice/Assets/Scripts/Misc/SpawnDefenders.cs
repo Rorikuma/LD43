@@ -4,9 +4,50 @@ using UnityEngine;
 
 public class SpawnDefenders : MonoBehaviour {
 
-	public void SpawnKids()
+    public float ChanceToSpawn = 0.75f;
+
+    public GameObject DefenderPrefab;
+
+    bool hasKid = false;
+    bool collidingPlayer = false;
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("spawning");
+        if(collision.gameObject.tag == "Player")
+        {
+            collidingPlayer = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            collidingPlayer = false;
+        }
+    }
+
+    void SpawnKid()
+    {
+        GameObject g = SimplePool.Spawn(DefenderPrefab, transform.position, Quaternion.identity);
+        hasKid = false;
+    }
+
+	public void NewDay()
+    {
+        float rand = Random.Range(0f, 1f);
+
+        if(rand <= ChanceToSpawn)
+        {
+            hasKid = true;
+        }
+    }
+
+    private void Update()
+    {
+        if(collidingPlayer && Input.GetButtonDown("Grab") && hasKid)
+        {
+            SpawnKid();
+        }
     }
 
 }

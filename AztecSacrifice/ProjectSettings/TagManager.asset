@@ -9,6 +9,7 @@ TagManager:
   - Shrine
   - Defender
   - Enemy
+  - House
   layers:
   - Default
   - TransparentFX

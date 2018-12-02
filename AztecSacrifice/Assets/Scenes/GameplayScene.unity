@@ -252,7 +252,7 @@ Prefab:
     - target: {fileID: 114016135972056698, guid: 5a25fe8d14d409c47909b02aa35f10aa,
         type: 2}
       propertyPath: DayTime
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a25fe8d14d409c47909b02aa35f10aa, type: 2}
@@ -339,7 +339,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4502768772616690, guid: 5fdc3c3e76d41124981c1dbfc0017543, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -194
+      value: -114
       objectReference: {fileID: 0}
     - target: {fileID: 4502768772616690, guid: 5fdc3c3e76d41124981c1dbfc0017543, type: 2}
       propertyPath: m_LocalPosition.y
@@ -530,7 +530,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4502768772616690, guid: 5fdc3c3e76d41124981c1dbfc0017543, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 206
+      value: 119
       objectReference: {fileID: 0}
     - target: {fileID: 4502768772616690, guid: 5fdc3c3e76d41124981c1dbfc0017543, type: 2}
       propertyPath: m_LocalPosition.y

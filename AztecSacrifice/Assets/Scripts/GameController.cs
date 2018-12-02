@@ -19,7 +19,7 @@ public class GameController : MonoBehaviour {
 
         foreach(SpawnDefenders h in houses)
         {
-            h.SpawnKids();
+            h.NewDay();
         }
     }
 
@@ -48,6 +48,7 @@ public class GameController : MonoBehaviour {
             {
                 // New Day
 
+                NewDay();
                 time = 0;
                 halfDay += 1;
                 day += 1;
