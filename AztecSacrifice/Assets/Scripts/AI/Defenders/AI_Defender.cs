@@ -85,7 +85,10 @@ public class AI_Defender : MonoBehaviour {
     IEnumerator FindClosestEnemy(float t)
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        TargetEnemy = GetClosest(enemies);
+        if (enemies.Length > 0)
+        {
+            TargetEnemy = GetClosest(enemies);
+        }
 
         yield return new WaitForSeconds(t);
 
@@ -115,7 +118,7 @@ public class AI_Defender : MonoBehaviour {
 
     private void Update()
     {
-        if(Vector2.Distance(myTransform.position, TargetEnemy.position) < stats.AttackRange)
+        if(TargetEnemy != null && Vector2.Distance(myTransform.position, TargetEnemy.position) < stats.AttackRange)
         {
             State = AIState.Attacking;
         }

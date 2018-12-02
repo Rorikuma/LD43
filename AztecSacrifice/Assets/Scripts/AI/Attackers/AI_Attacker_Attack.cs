@@ -12,7 +12,14 @@ public class AI_Attacker_Attack : MonoBehaviour {
     void Attack()
     {
         attackTimer = Time.time + stats.Firerate;
-        brain.target.GetComponent<AI_Stats>().TakeDamage(stats.damage);
+        if (brain.target.root.tag == "Player")
+        {
+            brain.target.GetComponent<PlayerStats>().TakeDamage(stats.damage);
+        }
+        else
+        {
+            brain.target.GetComponent<AI_Stats>().TakeDamage(stats.damage);
+        }
     }
 
     private void Awake()
@@ -23,7 +30,7 @@ public class AI_Attacker_Attack : MonoBehaviour {
 
     private void Update()
     {
-        if(brain.State == AIState.Attacking && Time.time > attackTimer)
+        if(brain.target != null && brain.State == AIState.Attacking && Time.time > attackTimer)
         {
             Attack();
         }

@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114986588565745314}
   - component: {fileID: 61817704933907956}
   - component: {fileID: 114698775622291342}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Attacker
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4479147124215652}
   - component: {fileID: 212194106708640694}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 100
@@ -152,7 +152,7 @@ MonoBehaviour:
   MaxHealth: 6
   AttackRange: 500
   AttackStrength: 1000
-  Firerate: 1.5
+  Firerate: 1
   damage: 1
 --- !u!114 &114520961470671358
 MonoBehaviour:

@@ -53,7 +53,7 @@ public class AI_Stats : MonoBehaviour {
         Destroy(gameObject);
     }
 
-    public void TakeDamage(int dmg)
+    public void TakeDamage(int dmg = 1)
     {
         if(currentHealth - dmg <= 0)
         {

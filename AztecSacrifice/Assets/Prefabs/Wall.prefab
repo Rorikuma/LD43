@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114067603357248688}
   - component: {fileID: 61113608099402882}
   - component: {fileID: 114910744491601016}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Wall
   m_TagString: WallRight
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4140595477837894}
   - component: {fileID: 212440663701153506}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,6 +125,7 @@ MonoBehaviour:
   AttackRange: 500
   AttackStrength: 1000
   Firerate: 0.5
+  damage: 1
 --- !u!212 &212440663701153506
 SpriteRenderer:
   m_ObjectHideFlags: 1

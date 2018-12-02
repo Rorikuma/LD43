@@ -34,8 +34,24 @@ public class AI_Attacker : MonoBehaviour {
                 movement.Stop();
             }
         }
+        else if(collision.gameObject.transform.root.tag == "Player")
+        {
+            State = AIState.Attacking;
+            Debug.Log("Player");
+            movement.Stop();
+            target = collision.gameObject.transform.root;
+        }
     }
-    
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.gameObject.transform.root.tag == "Player")
+        {
+            target = null;
+            State = AIState.Moving;
+        }
+    }
+
     void FaceTowardsShrine()
     {
         if(myTransform.position.x > shrine.position.x)
