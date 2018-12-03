@@ -142,7 +142,16 @@ MonoBehaviour:
   BuildingX: 64
   BuildingY: 64
   TriggerSizeX: 48
+  StartingKids: 2
+  StartingAdults: 2
+  StartingOld: 2
   WallPrefab: {fileID: 1075055845115626, guid: 09d156401fd92254f9eb533b79802537, type: 2}
+  DefenderPrefab: {fileID: 1774205109573126, guid: adcbbe3c78ad6454987f0335c21f4164,
+    type: 2}
+  DefenderPrefabAdult: {fileID: 1774205109573126, guid: bfcb9110a037d804d95312e804788d78,
+    type: 2}
+  DefenderPrefabOld: {fileID: 1774205109573126, guid: dac644a3ec8787f4a9e0d23c2a202e53,
+    type: 2}
 --- !u!212 &212426148372496906
 SpriteRenderer:
   m_ObjectHideFlags: 1

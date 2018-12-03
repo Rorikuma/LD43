@@ -11,9 +11,18 @@ public class BuildingTiles : MonoBehaviour {
     public float BuildingY = 64;
     public float TriggerSizeX = 48;
 
+    public int StartingKids = 2;
+    public int StartingAdults = 2;
+    public int StartingOld = 2;
+
     public GameObject WallPrefab;
+    public GameObject DefenderPrefab;
+    public GameObject DefenderPrefabAdult;
+    public GameObject DefenderPrefabOld;
 
     int wallPos = 8;
+
+    UnitManager um;
 
 	GameObject CreateTile(float x, int i, Transform parent)
     {
@@ -34,6 +43,8 @@ public class BuildingTiles : MonoBehaviour {
 
     private void Start()
     {
+        um = GetComponent<UnitManager>();
+
         if(MapSize%2 != 0)
         {
             MapSize += 1;
@@ -52,6 +63,29 @@ public class BuildingTiles : MonoBehaviour {
             {
                 currentTile.GetComponent<Tile>().BuildWall(WallPrefab, true);
             }
+        }
+
+        float offset = 8;
+        GameObject instance;
+        Vector3 pos = new Vector3(-offset * (StartingKids + StartingAdults + StartingOld) / 2, 0, 0);
+
+        for (int i = 0; i < StartingKids; i++)
+        {
+            Instantiate(DefenderPrefab, pos, Quaternion.identity);
+            pos += new Vector3(offset, 0, 0);
+        }
+
+        for (int i = 0; i < StartingAdults; i++)
+        {
+            instance = Instantiate(DefenderPrefabAdult, pos, Quaternion.identity);
+            pos += new Vector3(offset, 0, 0);
+
+        }
+
+        for (int i = 0; i < StartingOld; i++)
+        {
+            instance = Instantiate(DefenderPrefabOld, pos, Quaternion.identity);
+            pos += new Vector3(offset, 0, 0);
         }
     }
 

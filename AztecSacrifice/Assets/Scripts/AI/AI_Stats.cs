@@ -36,10 +36,14 @@ public class AI_Stats : MonoBehaviour
 
     private void Start()
     {
-        um = FindObjectOfType<UnitManager>();
         myTransform = this.transform;
         MaxHealth = KidHealth;
         currentHealth = MaxHealth;
+    }
+
+    private void Awake()
+    {
+        um = FindObjectOfType<UnitManager>();
     }
 
     public void IncreaseAge()

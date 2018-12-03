@@ -15,13 +15,13 @@ public class AI_Defender_Movement : MonoBehaviour {
     [HideInInspector]
     public bool reachedDestination = true;
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.tag == "Defender" && collision.gameObject.GetComponent<AI_Defender>().Assignment != brain.Assignment)
-        {
-            StartCoroutine(TurnOffCollision(0.5f));
-        }
-    }
+    //private void OnCollisionStay2D(Collision2D collision)
+    //{
+    //    if(collision.gameObject.tag == "Defender"/* && collision.gameObject.GetComponent<AI_Defender>().Assignment != brain.Assignment*/)
+    //    {
+    //        StartCoroutine(TurnOffCollision(0.5f));
+    //    }
+    //}
 
     IEnumerator TurnOffCollision(float t)
     {
@@ -48,6 +48,7 @@ public class AI_Defender_Movement : MonoBehaviour {
     {
         reachedDestination = false;
         targetPosition = pos;
+        rb.velocity = Vector2.zero;
         if(brain.Assignment == Side.Right)
         {
             transform.eulerAngles = Vector3.zero;

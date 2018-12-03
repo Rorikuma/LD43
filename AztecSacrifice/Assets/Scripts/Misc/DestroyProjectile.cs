@@ -6,11 +6,15 @@ public class DestroyProjectile : MonoBehaviour {
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy")
         {
             collision.gameObject.GetComponent<AI_Stats>().TakeDamage();
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
+        else if (collision.gameObject.name == "Floor")
+        {
+            Destroy(gameObject);
+        }
     }
 
 }
