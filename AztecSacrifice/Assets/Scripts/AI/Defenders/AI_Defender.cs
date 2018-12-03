@@ -17,26 +17,29 @@ public class AI_Defender : MonoBehaviour {
     Transform TargetWall;
     Transform TargetEnemy;
 
+    UnitManager um;
+    Vector2 furthestBuilding;
+
     AI_Defender_Movement movement;
 
-    Transform GetFurthest(GameObject[] gs)
-    {
-        GameObject t = null;
-        float longestDistance = 0;
-        float distance = 0;
+    //Transform GetFurthest(GameObject[] gs)
+    //{
+    //    GameObject t = null;
+    //    float longestDistance = 0;
+    //    float distance = 0;
 
-        foreach (GameObject g in gs)
-        {
-            distance = Vector2.Distance(myTransform.position, g.transform.position);
-            if (distance > longestDistance)
-            {
-                longestDistance = distance;
-                t = g;
-            }
-        }
+    //    foreach (GameObject g in gs)
+    //    {
+    //        distance = Vector2.Distance(myTransform.position, g.transform.position);
+    //        if (distance > longestDistance)
+    //        {
+    //            longestDistance = distance;
+    //            t = g;
+    //        }
+    //    }
 
-        return t.transform;
-    }
+    //    return t.transform;
+    //}
 
     Transform GetClosest(GameObject[] gs)
     {
@@ -57,30 +60,30 @@ public class AI_Defender : MonoBehaviour {
         return t.transform;
     }
 
-    Transform GetFurthestWall(Side s)
-    {
-        GameObject[] walls;
-        Transform target = null;
+    //Transform GetFurthestWall(Side s)
+    //{
+    //    GameObject[] walls;
+    //    Transform target = null;
 
-        if (s == Side.Right)
-        {
-            walls = GameObject.FindGameObjectsWithTag("WallRight");
-        }
-        else
-        {
-            walls = GameObject.FindGameObjectsWithTag("WallLeft");
-        }
-        if(walls.Length == 0)
-        {
-            // TODO: Find furthest building.
-        }
-        else
-        {
-            target = GetFurthest(walls);
-        }
+    //    if (s == Side.Right)
+    //    {
+    //        walls = GameObject.FindGameObjectsWithTag("WallRight");
+    //    }
+    //    else
+    //    {
+    //        walls = GameObject.FindGameObjectsWithTag("WallLeft");
+    //    }
+    //    if(walls.Length == 0)
+    //    {
+    //        // TODO: Find furthest building.
+    //    }
+    //    else
+    //    {
+    //        target = GetFurthest(walls);
+    //    }
 
-        return target;
-    }
+    //    return target;
+    //}
 
     IEnumerator FindClosestEnemy(float t)
     {
@@ -99,7 +102,32 @@ public class AI_Defender : MonoBehaviour {
     {
         Assignment = s;
 
-        movement.GetNewPosition(GetFurthestWall(s).position);
+        //movement.GetNewPosition(GetFurthestWall(s).position);
+        movement.GetNewPosition(GetFurthestBuilding());
+    }
+
+    Vector2 GetFurthestBuilding()
+    {
+        Vector2 furthest;
+        if(Assignment == Side.Right)
+        {
+            furthest = um.furthestBuildingOnRight;
+        }
+        else
+        {
+            furthest = um.furthestBuildingOnLeft;
+        }
+
+        return furthest;
+    }
+
+    public void GetFurthestBuilding(Vector2 v)
+    {
+        if (furthestBuilding != v)
+        {
+            furthestBuilding = v;
+            movement.GetNewPosition(furthestBuilding);
+        }
     }
 
     private void Awake()
@@ -109,10 +137,13 @@ public class AI_Defender : MonoBehaviour {
         movement = GetComponent<AI_Defender_Movement>();
         stats = GetComponent<AI_Stats>();
         attack = GetComponent<AI_Defender_Attack>();
+        um = FindObjectOfType<UnitManager>();
     }
 
     private void Start()
     {
+        um.RegisterDefender(GetComponent<AI_Defender>());
+
         StartCoroutine(FindClosestEnemy(0.3f));
     }
 
