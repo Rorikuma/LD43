@@ -28,12 +28,9 @@ public class AI_Stats : MonoBehaviour {
     int currentHealth = 5;
 
     Transform myTransform;
-
-    UnitManager um;
     
     private void Start()
     {
-        um = FindObjectOfType<UnitManager>();
         myTransform = this.transform;
         MaxHealth = kidHealth;
         currentHealth = MaxHealth;
@@ -66,10 +63,6 @@ public class AI_Stats : MonoBehaviour {
         if(gameObject.tag == "Enemy")
         {
             DropGold();
-        }
-        else if(gameObject.tag == "Defender")
-        {
-            um.DeregisterDefender(GetComponent<AI_Defender>());
         }
         Destroy(gameObject);
     }
