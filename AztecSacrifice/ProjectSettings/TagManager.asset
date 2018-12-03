@@ -12,6 +12,7 @@ TagManager:
   - House
   - Gold
   - Farm
+  - Healing
   layers:
   - Default
   - TransparentFX

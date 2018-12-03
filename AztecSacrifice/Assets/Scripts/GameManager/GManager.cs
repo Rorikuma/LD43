@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GManager : MonoBehaviour
 {
-
     public float DayTime = 240;
     public float MaxAlpha = 0.5f;
 
@@ -12,13 +11,30 @@ public class GManager : MonoBehaviour
     int halfDay = 0;
     float time = 0;
 
+    bool sacrificed = false;
+    bool nextSpawnGhosts = false;
+
     public SpriteRenderer NightSprite;
 
     SpawnAttackers sa;
     PlayerStats ps;
 
+    public void SacrificedToday()
+    {
+        sacrificed = true;
+    }
+
     void NewDay()
     {
+        if (sacrificed)
+        {
+            sacrificed = false;
+        }
+        else
+        {
+            nextSpawnGhosts = true;
+        }
+
         SpawnDefenders[] houses = FindObjectsOfType<SpawnDefenders>();
 
         foreach (SpawnDefenders h in houses)
@@ -48,7 +64,8 @@ public class GManager : MonoBehaviour
 
     void Night()
     {
-        sa.SpawnEnemies();
+        sa.SpawnEnemies(nextSpawnGhosts);
+        nextSpawnGhosts = false;
     }
 
     private void Start()

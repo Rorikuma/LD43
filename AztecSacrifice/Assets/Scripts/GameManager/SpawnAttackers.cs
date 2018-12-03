@@ -19,9 +19,10 @@ public class SpawnAttackers : MonoBehaviour {
         gm = GetComponent<GManager>();
     }
 
-    public void SpawnEnemies()
+    public void SpawnEnemies(bool spawnGhosts = false)
     {
         float sign = -1;
+        GameObject g;
 
         for (int i = 0; i < EnemiesPerNight; i++)
         {
@@ -30,7 +31,12 @@ public class SpawnAttackers : MonoBehaviour {
                 sign = 1;
             }
 
-            Instantiate(AttackerPrefab, new Vector3(SpawnX * sign, 0, 0), Quaternion.identity);
+            g = Instantiate(AttackerPrefab, new Vector3(SpawnX * sign, 0, 0), Quaternion.identity);
+
+            if (spawnGhosts)
+            {
+                g.GetComponent<AI_Stats>().IsAGhost = true;
+            }
         }
     }
 

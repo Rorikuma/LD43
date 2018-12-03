@@ -16,13 +16,18 @@ public class PlayerStats : MonoBehaviour {
 
     int currentHealth = 1;
 
+    float goldChangeTimer = 0;
+
     UI_Resources resources;
     UnitManager um;
 
+    public TextMesh HealthText;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Gold")
+        if(collision.gameObject.tag == "Gold" && Time.time > goldChangeTimer)
         {
+            goldChangeTimer = Time.time + 0.1f;
             ChangeGold();
             Destroy(collision.gameObject);
         }
@@ -33,9 +38,14 @@ public class PlayerStats : MonoBehaviour {
         um = FindObjectOfType<UnitManager>();
         currentHealth = MaxHealth;
         resources = FindObjectOfType<UI_Resources>();
-        resources.UpdateFaith(0);
-        resources.UpdateFood(0);
-        resources.UpdateGold(0);
+        resources.UpdateFaith(FaithPoints);
+        resources.UpdateFood(Food);
+        resources.UpdateGold(Gold);
+    }
+
+    private void Start()
+    {
+        UpdateHealthText();
     }
 
     public void ChangeGold(int g = 1)
@@ -80,6 +90,11 @@ public class PlayerStats : MonoBehaviour {
         resources.UpdateFood(Food);
     }
 
+    void UpdateHealthText()
+    {
+        HealthText.text = currentHealth.ToString();
+    }
+
     public void TakeDamage(int dmg)
     {
         if(currentHealth - dmg > 0)
@@ -89,8 +104,17 @@ public class PlayerStats : MonoBehaviour {
         else
         {
             currentHealth = 0;
+            Die();
         }
-        //Debug.Log(currentHealth);
+
+        UpdateHealthText();
+    }
+
+    public void Heal()
+    {
+        currentHealth = MaxHealth;
+
+        UpdateHealthText();
     }
 
     void Die()

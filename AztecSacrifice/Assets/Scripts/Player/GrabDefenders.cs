@@ -22,6 +22,7 @@ public class GrabDefenders : MonoBehaviour {
 
     PlayerStats stats;
     UnitManager um;
+    GManager gm;
 
     Phase grabbedPhase;
 
@@ -86,12 +87,15 @@ public class GrabDefenders : MonoBehaviour {
                 GrabPosition.GetComponent<SpriteRenderer>().sprite = null;
                 break;
         }
+
+        gm.SacrificedToday();
     }
 
     private void Awake()
     {
         stats = GetComponent<PlayerStats>();
         um = FindObjectOfType<UnitManager>();
+        gm = FindObjectOfType<GManager>();
     }
 
     private void Update()

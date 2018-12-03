@@ -26,19 +26,53 @@ public class AI_Stats : MonoBehaviour
     public float AdultFirerate = 1f;
     public float OldFirerate = 1.5f;
 
+    public int GhostHealth = 15;
+    public bool IsAGhost = false;
+
     public GameObject CoinPrefab;
 
-    int currentHealth = 5;
+    public int currentHealth = 5;
 
     Transform myTransform;
 
     UnitManager um;
 
+    public TextMesh HealthText;
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Healing")
+        {
+            currentHealth = MaxHealth;
+        }
+    }
+
     private void Start()
     {
         myTransform = this.transform;
-        MaxHealth = KidHealth;
+        if(gameObject.tag == "Defender")
+        {
+            switch (Age)
+            {
+                case Phase.Kid:
+                    MaxHealth = KidHealth;
+                    break;
+                case Phase.Adult:
+                    MaxHealth = AdultHealth;
+                    break;
+                case Phase.Old:
+                    MaxHealth = OldHealth;
+                    break;
+            }
+        }
+        else if (IsAGhost)
+        {
+            MaxHealth = GhostHealth;
+        }
+
         currentHealth = MaxHealth;
+
+        UpdateHealthText();
     }
 
     private void Awake()
@@ -72,7 +106,16 @@ public class AI_Stats : MonoBehaviour
                 //Die();
             }
 
+            UpdateHealthText();
             um.RegisterDefender(GetComponent<AI_Defender>());
+        }
+    }
+
+    void UpdateHealthText()
+    {
+        if (HealthText != null)
+        {
+            HealthText.text = currentHealth.ToString();
         }
     }
 
@@ -113,6 +156,18 @@ public class AI_Stats : MonoBehaviour
         {
             currentHealth -= dmg;
         }
+
+        UpdateHealthText();
+    }
+
+    public void Heal(int h)
+    {
+        if(currentHealth + h > MaxHealth)
+        {
+            currentHealth = MaxHealth;
+        }
+
+        UpdateHealthText();
     }
 
 }

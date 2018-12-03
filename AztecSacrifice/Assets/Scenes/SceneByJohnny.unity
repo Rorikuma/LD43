@@ -492,11 +492,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114076912528662940, guid: 52d06528134c09541b1e3890d90c9c7e,
-        type: 2}
-      propertyPath: DayTime
-      value: 30
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52d06528134c09541b1e3890d90c9c7e, type: 2}
   m_IsPrefabAsset: 0

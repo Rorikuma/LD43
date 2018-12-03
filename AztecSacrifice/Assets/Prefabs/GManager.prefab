@@ -84,7 +84,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb96a7f93c44cc34d9436ac314731bfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DayTime: 5
+  DayTime: 30
   MaxAlpha: 0.5
   Day: 1
   NightSprite: {fileID: 212426148372496906}
