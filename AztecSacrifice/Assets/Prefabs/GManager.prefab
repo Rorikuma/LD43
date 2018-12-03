@@ -35,6 +35,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4666084055930552}
+  - component: {fileID: 114076912528662940}
+  - component: {fileID: 114877540444016556}
+  - component: {fileID: 114443975855346814}
   m_Layer: 0
   m_Name: GManager
   m_TagString: Untagged
@@ -69,6 +72,49 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114076912528662940
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1868845984442498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb96a7f93c44cc34d9436ac314731bfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DayTime: 5
+  MaxAlpha: 0.5
+  Day: 1
+  NightSprite: {fileID: 212426148372496906}
+--- !u!114 &114443975855346814
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1868845984442498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8080db3d601fb4e80b0ff49556db18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114877540444016556
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1868845984442498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d302cd74e10a57f4ba87e987a0dec54e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LayerName: BuildingTile
+  MapSize: 32
+  BuildingX: 64
+  BuildingY: 64
+  TriggerSizeX: 48
+  WallPrefab: {fileID: 1075055845115626, guid: 09d156401fd92254f9eb533b79802537, type: 2}
 --- !u!212 &212426148372496906
 SpriteRenderer:
   m_ObjectHideFlags: 1

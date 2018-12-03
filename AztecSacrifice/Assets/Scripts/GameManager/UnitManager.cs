@@ -1,0 +1,168 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class UnitManager : MonoBehaviour {
+
+    List<AI_Defender> defendersUnassigned;
+    List<AI_Defender> defendersRight;
+    List<AI_Defender> defendersLeft;
+    List<Transform> buildings;
+
+    public Vector2 furthestBuildingOnRight { get; protected set; }
+    public Vector2 furthestBuildingOnLeft { get; protected set; }
+
+    float furthestDistanceRight = 0;
+    float furthestDistanceLeft = 0;
+
+    Vector2 shrinePosition = Vector2.zero;
+
+    public void DeregisterDefender(AI_Defender d)
+    {
+        if (defendersUnassigned.Contains(d))
+        {
+            defendersUnassigned.Remove(d);
+        }
+        else if (defendersLeft.Contains(d))
+        {
+            defendersLeft.Remove(d);
+        }
+        else if (defendersRight.Contains(d))
+        {
+            defendersRight.Remove(d);
+        }
+    }
+
+    public void RegisterDefender(AI_Defender d)
+    {
+        if(d.Assignment == Side.None)
+        {
+            defendersUnassigned.Add(d);
+        }
+        else if(d.Assignment == Side.Left)
+        {
+            defendersLeft.Add(d);
+        }
+        else if(d.Assignment == Side.Right)
+        {
+            defendersRight.Add(d);
+        }
+    }
+    public void DeregisterBuilding(Transform b)
+    {
+        if (buildings.Contains(b))
+        {
+            buildings.Remove(b);
+        }
+
+        OnDeregisterBuilding(b);
+    }
+
+    public void RegisterBuilding(Transform b)
+    {
+        if (buildings.Contains(b) == false)
+        {
+            buildings.Add(b);
+        }
+
+        CheckNewBuilding(b);
+    }
+
+
+    void CheckNewBuilding(Transform b)
+    {
+        float distance = Vector2.Distance(b.position, shrinePosition);
+        if (b.position.x > shrinePosition.x)
+        {
+            if (distance > furthestDistanceRight)
+            {
+                furthestDistanceRight = distance;
+                furthestBuildingOnRight = b.position;
+
+                foreach (AI_Defender d in defendersRight)
+                {
+                    d.GetFurthestBuilding(b.position);
+                }
+            }
+        }
+        else
+        {
+            if(distance > furthestDistanceLeft)
+            {
+                furthestDistanceLeft = distance;
+                furthestBuildingOnLeft = b.position;
+
+                foreach (AI_Defender d in defendersLeft)
+                {
+                    d.GetFurthestBuilding(b.position);
+                }
+            }
+        }
+    }
+
+    void OnDeregisterBuilding(Transform b)
+    {
+        if(b.position.x == furthestBuildingOnLeft.x)
+        {
+            float furthest = 0;
+
+            foreach (Transform t in buildings)
+            {
+                if(t.position.x < shrinePosition.x)
+                {
+                    if(Vector2.Distance(t.position, shrinePosition) > furthest)
+                    {
+                        furthestBuildingOnLeft = t.position;
+                        furthest = Vector2.Distance(t.position, shrinePosition);
+                    }
+                }
+            }
+
+            foreach (AI_Defender d in defendersLeft)
+            {
+                d.GetFurthestBuilding(furthestBuildingOnLeft);
+            }
+        }
+        else if (b.position.x == furthestBuildingOnRight.x)
+        {
+            float furthest = 0;
+
+            foreach (Transform t in buildings)
+            {
+                if (t.position.x > shrinePosition.x)
+                {
+                    if (Vector2.Distance(t.position, shrinePosition) > furthest)
+                    {
+                        furthestBuildingOnRight = t.position;
+                        furthest = Vector2.Distance(t.position, shrinePosition);
+                    }
+                }
+            }
+
+            foreach (AI_Defender d in defendersRight)
+            {
+                d.GetFurthestBuilding(furthestBuildingOnRight);
+            }
+        }
+    }
+    
+    void SetupBuildings()
+    {
+        buildings = new List<Transform>();
+    }
+
+    void SetupDefenders()
+    {
+        defendersUnassigned = new List<AI_Defender>();
+        defendersRight = new List<AI_Defender>();
+        defendersLeft = new List<AI_Defender>();
+    }
+
+    private void Start()
+    {
+        shrinePosition = GameObject.FindGameObjectWithTag("Shrine").transform.position;
+        SetupDefenders();
+        SetupBuildings();
+    }
+
+}
