@@ -21,6 +21,7 @@ public class GrabDefenders : MonoBehaviour {
     public bool isHolding = false;
 
     PlayerStats stats;
+    UnitManager um;
 
     Phase grabbedPhase;
 
@@ -59,6 +60,7 @@ public class GrabDefenders : MonoBehaviour {
                 break;
         }
 
+        um.DeregisterDefender(Defender.GetComponent<AI_Defender>());
         Destroy(Defender);
         Defender = null;
     }
@@ -89,6 +91,7 @@ public class GrabDefenders : MonoBehaviour {
     private void Awake()
     {
         stats = GetComponent<PlayerStats>();
+        um = FindObjectOfType<UnitManager>();
     }
 
     private void Update()

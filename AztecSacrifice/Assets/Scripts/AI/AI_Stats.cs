@@ -6,6 +6,7 @@ public enum Phase { Kid, Adult, Old }
 
 public class AI_Stats : MonoBehaviour
 {
+    public bool NeverGetOld = false;
 
     public Phase Age = Phase.Kid;
 
@@ -42,24 +43,31 @@ public class AI_Stats : MonoBehaviour
 
     public void IncreaseAge()
     {
-        if (Age == Phase.Kid)
+        if (NeverGetOld == false)
         {
-            Age = Phase.Adult;
-            MaxHealth = adultHealth;
-            currentHealth = adultHealth;
-            Firerate = AdultFirerate;
-        }
-        else if (Age == Phase.Adult)
-        {
-            Age = Phase.Old;
-            MaxHealth = oldHealth;
-            currentHealth = oldHealth;
-            Firerate = OldFirerate;
-        }
-        else if (Age == Phase.Old)
-        {
-            // TODO: Uncomment when making a final build
-            //Die();
+            um.DeregisterDefender(GetComponent<AI_Defender>());
+
+            if (Age == Phase.Kid)
+            {
+                Age = Phase.Adult;
+                MaxHealth = adultHealth;
+                currentHealth = adultHealth;
+                Firerate = AdultFirerate;
+            }
+            else if (Age == Phase.Adult)
+            {
+                Age = Phase.Old;
+                MaxHealth = oldHealth;
+                currentHealth = oldHealth;
+                Firerate = OldFirerate;
+            }
+            else if (Age == Phase.Old)
+            {
+                // TODO: Uncomment when making a final build
+                //Die();
+            }
+
+            um.RegisterDefender(GetComponent<AI_Defender>());
         }
     }
 
