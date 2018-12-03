@@ -59,11 +59,11 @@ public class AI_Defender : MonoBehaviour
 
     public void ChangeAssignment(Side s)
     {
-        Assignment = s;
         um.DeregisterDefender(ai);
-        um.RegisterDefender(ai);
+        Assignment = s;
 
         movement.GetNewPosition(GetFurthestBuilding());
+        um.RegisterDefender(ai);
     }
 
     Vector2 GetFurthestBuilding()

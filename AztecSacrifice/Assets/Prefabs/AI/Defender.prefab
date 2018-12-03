@@ -191,6 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1cf7446bcd8f354997401cfe4715d7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NeverGetOld: 1
   Age: 0
   MovementSpeed: 100
   MaxHealth: 5
@@ -198,6 +199,10 @@ MonoBehaviour:
   AttackStrength: 50000
   Firerate: 1
   damage: 1
+  KidFirerate: 2
+  AdultFirerate: 1
+  OldFirerate: 1.5
+  CoinPrefab: {fileID: 0}
 --- !u!212 &212628753309441928
 SpriteRenderer:
   m_ObjectHideFlags: 1
