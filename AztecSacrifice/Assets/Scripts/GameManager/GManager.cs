@@ -15,6 +15,7 @@ public class GManager : MonoBehaviour
     public SpriteRenderer NightSprite;
 
     SpawnAttackers sa;
+    PlayerStats ps;
 
     void NewDay()
     {
@@ -27,10 +28,15 @@ public class GManager : MonoBehaviour
 
         GameObject[] defenders = GameObject.FindGameObjectsWithTag("Defender");
 
+        int i = 0;
+
         foreach (GameObject g in defenders)
         {
             g.GetComponent<AI_Stats>().IncreaseAge();
+            i++;
         }
+
+        ps.ChangeFood(i);
 
         GameObject[] farms = GameObject.FindGameObjectsWithTag("Farm");
         
@@ -47,6 +53,7 @@ public class GManager : MonoBehaviour
 
     private void Start()
     {
+        ps = FindObjectOfType<PlayerStats>();
         sa = GetComponent<SpawnAttackers>();
         NightSprite.color = new Color(NightSprite.color.r, NightSprite.color.g, NightSprite.color.b, 0);
     }

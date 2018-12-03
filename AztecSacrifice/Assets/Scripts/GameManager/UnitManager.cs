@@ -34,16 +34,17 @@ public class UnitManager : MonoBehaviour {
 
     public void NotEnoughFood(int food)
     {
-        int x = food;
-        while(x > 0)
+        foreach (AI_Defender d in defendersUnassigned)
         {
-            if(defendersUnassigned.Count > 0)
-            {
-                foreach(AI_Defender d in defendersUnassigned)
-                {
-                    //if()
-                }
-            }
+            d.gameObject.GetComponent<AI_Stats>().TakeDamage(food);
+        }
+        foreach (AI_Defender d in defendersLeft)
+        {
+            d.gameObject.GetComponent<AI_Stats>().TakeDamage(food);
+        }
+        foreach (AI_Defender d in defendersRight)
+        {
+            d.gameObject.GetComponent<AI_Stats>().TakeDamage(food);
         }
     }
 

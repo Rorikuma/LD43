@@ -17,6 +17,7 @@ public class PlayerStats : MonoBehaviour {
     int currentHealth = 1;
 
     UI_Resources resources;
+    UnitManager um;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -29,6 +30,7 @@ public class PlayerStats : MonoBehaviour {
 
     private void Awake()
     {
+        um = FindObjectOfType<UnitManager>();
         currentHealth = MaxHealth;
         resources = FindObjectOfType<UI_Resources>();
         resources.UpdateFaith(0);
@@ -68,6 +70,13 @@ public class PlayerStats : MonoBehaviour {
     public void ChangeFood(int f = 1)
     {
         Food += f;
+
+        if(Food < 0)
+        {
+            um.NotEnoughFood(Food);
+            Food = 0;
+        }
+
         resources.UpdateFood(Food);
     }
 
