@@ -12,6 +12,8 @@ public class SpawnAttackers : MonoBehaviour {
 
     GManager gm;
 
+    public GameObject AttackerPrefab;
+
     private void Awake()
     {
         gm = GetComponent<GManager>();
@@ -19,7 +21,15 @@ public class SpawnAttackers : MonoBehaviour {
 
     public void SpawnEnemies()
     {
-        for ()
+        //Vector2 spawnPos1 = new Vector2(SpawnX)
+
+        //for (int i = 0; i < EnemiesPerNight; i++)
+        //{
+        //    if(i <= Mathf.Round(EnemiesPerNight / 2))
+        //    {
+        //        Instantiate(AttackerPrefab)
+        //    }
+        //}
     }
 
 }
