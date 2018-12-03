@@ -7,6 +7,7 @@ public enum Phase { Kid, Adult, Old }
 public class AI_Stats : MonoBehaviour
 {
     public bool NeverGetOld = false;
+    public bool IsABuilding = false;
 
     public Phase Age = Phase.Kid;
 
@@ -80,6 +81,13 @@ public class AI_Stats : MonoBehaviour
         else if (gameObject.tag == "Defender")
         {
             um.DeregisterDefender(GetComponent<AI_Defender>());
+        }
+
+        if (IsABuilding)
+        {
+            Debug.Log("test");
+            um.DeregisterBuilding(myTransform);
+            Destroy(myTransform.root);
         }
 
         Destroy(gameObject);

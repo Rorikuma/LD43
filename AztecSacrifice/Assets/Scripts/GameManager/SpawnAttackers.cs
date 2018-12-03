@@ -21,15 +21,17 @@ public class SpawnAttackers : MonoBehaviour {
 
     public void SpawnEnemies()
     {
-        //Vector2 spawnPos1 = new Vector2(SpawnX)
+        float sign = -1;
 
-        //for (int i = 0; i < EnemiesPerNight; i++)
-        //{
-        //    if(i <= Mathf.Round(EnemiesPerNight / 2))
-        //    {
-        //        Instantiate(AttackerPrefab)
-        //    }
-        //}
+        for (int i = 0; i < EnemiesPerNight; i++)
+        {
+            if (i > Mathf.Round(EnemiesPerNight / 2))
+            {
+                sign = 1;
+            }
+
+            Instantiate(AttackerPrefab, new Vector3(SpawnX * sign, 0, 0), Quaternion.identity);
+        }
     }
 
 }

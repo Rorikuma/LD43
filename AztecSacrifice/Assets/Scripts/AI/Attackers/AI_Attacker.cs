@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum AIState { Moving, Idle, Attacking }
 
@@ -19,7 +20,8 @@ public class AI_Attacker : MonoBehaviour {
     private void OnTriggerStay2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "WallRight" || collision.gameObject.tag == "WallLeft" 
-            || collision.gameObject.tag == "Defender")
+            || collision.gameObject.tag == "Defender" || collision.transform.root.tag == "House" 
+            || collision.transform.root.tag == "Farm")
         {
             State = AIState.Attacking;
             movement.Stop();
@@ -39,6 +41,14 @@ public class AI_Attacker : MonoBehaviour {
             State = AIState.Attacking;
             movement.Stop();
             target = collision.gameObject.transform.root;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Shrine")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 

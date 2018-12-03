@@ -59,6 +59,7 @@ public class GManager : MonoBehaviour
 
             if (time >= DayTime)
             {
+                Night();
                 time = DayTime;
                 halfDay += 1;
             }

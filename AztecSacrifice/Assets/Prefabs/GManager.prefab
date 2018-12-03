@@ -99,6 +99,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a4e4afe8d18f4e49a949c4e26113be7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemiesPerNight: 10
+  EnemiesIncrease: 1
+  MaxEnemiesPerNight: 40
+  SpawnX: 1280
+  AttackerPrefab: {fileID: 1336340859890906, guid: 0e71d819209053948a86a3f31b95bbf7,
+    type: 2}
 --- !u!114 &114443975855346814
 MonoBehaviour:
   m_ObjectHideFlags: 1
