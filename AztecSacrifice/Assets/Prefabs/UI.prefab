@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 114965766040332410}
   - component: {fileID: 114187858746776576}
   m_Layer: 5
-  m_Name: Header (3)
+  m_Name: Faith
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 114846042860864242}
   - component: {fileID: 114674503439517808}
   m_Layer: 5
-  m_Name: Header (2)
+  m_Name: Gold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -246,6 +246,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 224649034633184238}
+  - component: {fileID: 114752998405992476}
   m_Layer: 5
   m_Name: Resources
   m_TagString: Untagged
@@ -283,7 +284,7 @@ GameObject:
   - component: {fileID: 114290694558915374}
   - component: {fileID: 114718888499396482}
   m_Layer: 5
-  m_Name: Header (3)
+  m_Name: Food
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -848,15 +849,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60d9de3a42ec1f940a5a00513bcb0f3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uKids: {fileID: 0}
-  uAdults: {fileID: 0}
-  uOld: {fileID: 0}
-  lKids: {fileID: 0}
-  lAdults: {fileID: 0}
-  lOld: {fileID: 0}
-  rKids: {fileID: 0}
-  rAdults: {fileID: 0}
-  rOld: {fileID: 0}
+  uKids: {fileID: 114801275948938874}
+  uAdults: {fileID: 114092411832737648}
+  uOld: {fileID: 114143049757539354}
+  lKids: {fileID: 114685539368934776}
+  lAdults: {fileID: 114380404955950300}
+  lOld: {fileID: 114012468386773196}
+  rKids: {fileID: 114717397355161026}
+  rAdults: {fileID: 114235456098793736}
+  rOld: {fileID: 114790752039975804}
 --- !u!114 &114089581110034308
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1864,6 +1865,20 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &114752998405992476
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1337121776924238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b6fd27984f434f4fa6ea01e9b29378b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Gold: {fileID: 114846042860864242}
+  Faith: {fileID: 114965766040332410}
+  Food: {fileID: 114290694558915374}
 --- !u!114 &114767145147620298
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class UnitManager : MonoBehaviour {
 
-    public List<AI_Defender> defendersUnassigned;
-    public List<AI_Defender> defendersRight;
-    public List<AI_Defender> defendersLeft;
+    List<AI_Defender> defendersUnassigned;
+    List<AI_Defender> defendersRight;
+    List<AI_Defender> defendersLeft;
     List<Transform> buildings;
 
     public int LeftKids = 0;

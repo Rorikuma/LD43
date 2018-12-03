@@ -4,10 +4,18 @@ using UnityEngine;
 
 public class Farm : MonoBehaviour {
 
+    public int FoodIncrease = 1;
+
     int spawnedDay = 0;
+
+    bool hasFood = false;
+    bool collidingWithPlayer = false;
 
     PlayerStats pStats;
     GManager gm;
+
+    public Sprite Notification;
+    public SpriteRenderer NotificationRenderer;
 
     private void Start()
     {
@@ -23,13 +31,40 @@ public class Farm : MonoBehaviour {
     {
         if(gm.Day == spawnedDay + 3)
         {
-            IncreaseFood();
+            hasFood = true;
+            NotificationRenderer.sprite = Notification;
         }
     }
 
     void IncreaseFood()
     {
-        pStats.ChangeFood();
+        spawnedDay = gm.Day;
+        hasFood = false;
+        NotificationRenderer.sprite = null;
+        pStats.ChangeFood(FoodIncrease);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            collidingWithPlayer = true;
+        }
+    }
+    
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            collidingWithPlayer = false;
+        }
+    }
+
+    private void Update()
+    {
+        if(Input.GetButtonDown("Grab") && collidingWithPlayer && hasFood)
+        {
+            IncreaseFood();
+        }
+    }
 }

@@ -15,6 +15,8 @@ public class PlayerStats : MonoBehaviour {
 
     int currentHealth = 1;
 
+    UI_Resources resources;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Gold")
@@ -27,12 +29,16 @@ public class PlayerStats : MonoBehaviour {
     private void Awake()
     {
         currentHealth = MaxHealth;
+        resources = FindObjectOfType<UI_Resources>();
+        resources.UpdateFaith(0);
+        resources.UpdateFood(0);
+        resources.UpdateGold(0);
     }
 
     public void ChangeGold(int g = 1)
     {
         Gold += g;
-        Debug.Log(Gold);
+        resources.UpdateGold(Gold);
     }
 
     public void ChangeGold(BuildingType type, int i)
@@ -49,17 +55,19 @@ public class PlayerStats : MonoBehaviour {
                 Gold += FarmCost * i;
                 break;
         }
-        Debug.Log(Gold);
+        resources.UpdateGold(Gold);
     }
 
     public void IncreaseFaith(int i)
     {
         FaithPoints += i;
+        resources.UpdateFaith(FaithPoints);
     }
 
     public void ChangeFood(int f = 1)
     {
         Food += f;
+        resources.UpdateFood(Food);
     }
 
     public void TakeDamage(int dmg)
