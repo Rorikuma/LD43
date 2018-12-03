@@ -19,9 +19,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4802595682521428}
-  - component: {fileID: 114896701290121610}
-  - component: {fileID: 114915700028911536}
-  - component: {fileID: 114210110581907218}
+  - component: {fileID: 114391618572587550}
+  - component: {fileID: 114651594161665438}
+  - component: {fileID: 114958648529132474}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -72,7 +72,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114210110581907218
+--- !u!114 &114391618572587550
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -80,10 +80,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1384506755070176}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 388b71cedd2a61e45bde6a11eab00af4, type: 3}
+  m_Script: {fileID: 11500000, guid: bb96a7f93c44cc34d9436ac314731bfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114896701290121610
+  DayTime: 5
+  MaxAlpha: 0.5
+  Day: 1
+  NightSprite: {fileID: 212478962445024510}
+--- !u!114 &114651594161665438
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,16 +95,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1384506755070176}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3af2877182095c74cb90ed028103dd35, type: 3}
+  m_Script: {fileID: 11500000, guid: d302cd74e10a57f4ba87e987a0dec54e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LayerName: 
-  MapSize: 10
+  LayerName: BuildingTile
+  MapSize: 32
   BuildingX: 64
   BuildingY: 64
   TriggerSizeX: 48
-  WallPrefab: {fileID: 0}
---- !u!114 &114915700028911536
+  WallPrefab: {fileID: 1075055845115626, guid: 09d156401fd92254f9eb533b79802537, type: 2}
+--- !u!114 &114958648529132474
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,13 +112,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1384506755070176}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c22710e7dd95f24e8ad5acfb3845cea, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b8080db3d601fb4e80b0ff49556db18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DayTime: 240
-  MaxAlpha: 0.5
-  Day: 1
-  NightSprite: {fileID: 0}
 --- !u!212 &212478962445024510
 SpriteRenderer:
   m_ObjectHideFlags: 1
