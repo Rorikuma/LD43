@@ -13,7 +13,9 @@ public class UnitManager : MonoBehaviour {
     public Vector2 furthestBuildingOnLeft { get; protected set; }
 
     float furthestDistanceRight = 0;
+    Vector2 furthestPositionRight;
     float furthestDistanceLeft = 0;
+    Vector2 furthestPositionLeft;
 
     Vector2 shrinePosition = Vector2.zero;
 
