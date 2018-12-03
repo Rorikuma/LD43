@@ -52,7 +52,7 @@ public class GManager : MonoBehaviour
             i++;
         }
 
-        ps.ChangeFood(i);
+        ps.ChangeFood(-i);
 
         GameObject[] farms = GameObject.FindGameObjectsWithTag("Farm");
         

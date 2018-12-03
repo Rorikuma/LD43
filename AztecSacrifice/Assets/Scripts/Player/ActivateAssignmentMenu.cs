@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ActivateAssignmentMenu : MonoBehaviour {
 
-    bool isActive = false;
+    bool isActive = true;
 
     GameObject assignmentMenu;
 
@@ -15,7 +15,7 @@ public class ActivateAssignmentMenu : MonoBehaviour {
 
     private void Start()
     {
-        assignmentMenu.SetActive(false);
+        //assignmentMenu.SetActive(false);
     }
 
     private void Update()
