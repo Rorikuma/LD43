@@ -14,6 +14,8 @@ public class GManager : MonoBehaviour
 
     public SpriteRenderer NightSprite;
 
+    SpawnAttackers sa;
+
     void NewDay()
     {
         SpawnDefenders[] houses = FindObjectsOfType<SpawnDefenders>();
@@ -38,8 +40,14 @@ public class GManager : MonoBehaviour
         }
     }
 
+    void Night()
+    {
+        sa.SpawnEnemies();
+    }
+
     private void Start()
     {
+        sa = GetComponent<SpawnAttackers>();
         NightSprite.color = new Color(NightSprite.color.r, NightSprite.color.g, NightSprite.color.b, 0);
     }
 
@@ -51,6 +59,7 @@ public class GManager : MonoBehaviour
 
             if (time >= DayTime)
             {
+                Night();
                 time = DayTime;
                 halfDay += 1;
             }

@@ -71,7 +71,7 @@ public class UI_AssignmentMenu : MonoBehaviour {
 
     private void Update()
     {
-        //UpdateVariables();
+        UpdateVariables();
     }
 
 }
