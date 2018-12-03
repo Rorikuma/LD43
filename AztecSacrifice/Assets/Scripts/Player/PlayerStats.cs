@@ -9,6 +9,10 @@ public class PlayerStats : MonoBehaviour {
     public int Gold = 0;
     public int Food = 0;
 
+    public int HouseCost = 10;
+    public int WallCost = 10;
+    public int FarmCost = 10;
+
     int currentHealth = 1;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -28,6 +32,24 @@ public class PlayerStats : MonoBehaviour {
     public void ChangeGold(int g = 1)
     {
         Gold += g;
+        Debug.Log(Gold);
+    }
+
+    public void ChangeGold(BuildingType type, int i)
+    {
+        switch (type)
+        {
+            case BuildingType.House:
+                Gold += HouseCost * i;
+                break;
+            case BuildingType.Wall:
+                Gold += WallCost * i;
+                break;
+            case BuildingType.Farm:
+                Gold += FarmCost * i;
+                break;
+        }
+        Debug.Log(Gold);
     }
 
     public void IncreaseFaith(int i)

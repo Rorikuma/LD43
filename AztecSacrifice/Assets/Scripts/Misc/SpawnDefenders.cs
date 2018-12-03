@@ -49,6 +49,11 @@ public class SpawnDefenders : MonoBehaviour {
         }
     }
 
+    private void Start()
+    {
+        FindObjectOfType<UnitManager>().RegisterBuilding(this.transform);
+    }
+
     private void Update()
     {
         if(collidingPlayer && Input.GetButtonDown("Grab") && hasKid)

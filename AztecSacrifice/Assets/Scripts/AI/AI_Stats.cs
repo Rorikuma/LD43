@@ -4,7 +4,8 @@ using UnityEngine;
 
 public enum Phase { Kid, Adult, Old }
 
-public class AI_Stats : MonoBehaviour {
+public class AI_Stats : MonoBehaviour
+{
 
     public Phase Age = Phase.Kid;
 
@@ -28,9 +29,12 @@ public class AI_Stats : MonoBehaviour {
     int currentHealth = 5;
 
     Transform myTransform;
-    
+
+    UnitManager um;
+
     private void Start()
     {
+        um = FindObjectOfType<UnitManager>();
         myTransform = this.transform;
         MaxHealth = kidHealth;
         currentHealth = MaxHealth;
@@ -38,32 +42,38 @@ public class AI_Stats : MonoBehaviour {
 
     public void IncreaseAge()
     {
-        if(Age == Phase.Kid)
+        if (Age == Phase.Kid)
         {
             Age = Phase.Adult;
             MaxHealth = adultHealth;
             currentHealth = adultHealth;
             Firerate = AdultFirerate;
         }
-        else if(Age == Phase.Adult)
+        else if (Age == Phase.Adult)
         {
             Age = Phase.Old;
             MaxHealth = oldHealth;
             currentHealth = oldHealth;
             Firerate = OldFirerate;
         }
-        else if(Age == Phase.Old)
+        else if (Age == Phase.Old)
         {
-            Die();
+            // TODO: Uncomment when making a final build
+            //Die();
         }
     }
 
     void Die()
     {
-        if(gameObject.tag == "Enemy")
+        if (gameObject.tag == "Enemy")
         {
             DropGold();
         }
+        else if (gameObject.tag == "Defender")
+        {
+            um.DeregisterDefender(GetComponent<AI_Defender>());
+        }
+
         Destroy(gameObject);
     }
 
@@ -74,7 +84,7 @@ public class AI_Stats : MonoBehaviour {
 
     public void TakeDamage(int dmg = 1)
     {
-        if(currentHealth - dmg <= 0)
+        if (currentHealth - dmg <= 0)
         {
             currentHealth = 0;
             Die();

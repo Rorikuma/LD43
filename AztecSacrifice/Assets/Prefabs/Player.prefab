@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: 114350645722690936}
   - component: {fileID: 114744112797432130}
   - component: {fileID: 114655261539463786}
+  - component: {fileID: 114619850488326702}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -301,6 +302,7 @@ MonoBehaviour:
   MaxHealth: 20
   FaithPoints: 0
   Gold: 0
+  Food: 0
 --- !u!114 &114397033948640536
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -310,6 +312,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: acfbf320538eb394f95a022a2293fbec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114619850488326702
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1893427702143852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f22ed4d5d79624485e76f2f661aad4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114655261539463786

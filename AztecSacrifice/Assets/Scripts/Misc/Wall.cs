@@ -17,6 +17,7 @@ public class Wall : MonoBehaviour {
             gameObject.tag = "WallLeft";
         }
 
+        FindObjectOfType<UnitManager>().RegisterBuilding(this.transform);
 	}
 	
 }

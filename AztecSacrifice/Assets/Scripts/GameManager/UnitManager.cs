@@ -13,9 +13,7 @@ public class UnitManager : MonoBehaviour {
     public Vector2 furthestBuildingOnLeft { get; protected set; }
 
     float furthestDistanceRight = 0;
-    Vector2 furthestPositionRight;
     float furthestDistanceLeft = 0;
-    Vector2 furthestPositionLeft;
 
     Vector2 shrinePosition = Vector2.zero;
 
@@ -56,6 +54,8 @@ public class UnitManager : MonoBehaviour {
         {
             buildings.Remove(b);
         }
+
+        OnDeregisterBuilding(b);
     }
 
     public void RegisterBuilding(Transform b)
@@ -77,13 +77,11 @@ public class UnitManager : MonoBehaviour {
             if (distance > furthestDistanceRight)
             {
                 furthestDistanceRight = distance;
+                furthestBuildingOnRight = b.position;
 
-                foreach (AI_Defender d in defendersUnassigned)
+                foreach (AI_Defender d in defendersRight)
                 {
-                    if(d.Assignment == Side.Right)
-                    {
-                        //d.GetFurthestBuilding()
-                    }
+                    d.GetFurthestBuilding(b.position);
                 }
             }
         }
@@ -92,15 +90,62 @@ public class UnitManager : MonoBehaviour {
             if(distance > furthestDistanceLeft)
             {
                 furthestDistanceLeft = distance;
+                furthestBuildingOnLeft = b.position;
+
+                foreach (AI_Defender d in defendersLeft)
+                {
+                    d.GetFurthestBuilding(b.position);
+                }
             }
         }
     }
 
-    void FindFurthestBuilding()
+    void OnDeregisterBuilding(Transform b)
     {
-        // TODO: Find furthest building
-    }
+        if(b.position.x == furthestBuildingOnLeft.x)
+        {
+            float furthest = 0;
 
+            foreach (Transform t in buildings)
+            {
+                if(t.position.x < shrinePosition.x)
+                {
+                    if(Vector2.Distance(t.position, shrinePosition) > furthest)
+                    {
+                        furthestBuildingOnLeft = t.position;
+                        furthest = Vector2.Distance(t.position, shrinePosition);
+                    }
+                }
+            }
+
+            foreach (AI_Defender d in defendersLeft)
+            {
+                d.GetFurthestBuilding(furthestBuildingOnLeft);
+            }
+        }
+        else if (b.position.x == furthestBuildingOnRight.x)
+        {
+            float furthest = 0;
+
+            foreach (Transform t in buildings)
+            {
+                if (t.position.x > shrinePosition.x)
+                {
+                    if (Vector2.Distance(t.position, shrinePosition) > furthest)
+                    {
+                        furthestBuildingOnRight = t.position;
+                        furthest = Vector2.Distance(t.position, shrinePosition);
+                    }
+                }
+            }
+
+            foreach (AI_Defender d in defendersRight)
+            {
+                d.GetFurthestBuilding(furthestBuildingOnRight);
+            }
+        }
+    }
+    
     void SetupBuildings()
     {
         buildings = new List<Transform>();
@@ -118,7 +163,6 @@ public class UnitManager : MonoBehaviour {
         shrinePosition = GameObject.FindGameObjectWithTag("Shrine").transform.position;
         SetupDefenders();
         SetupBuildings();
-        FindFurthestBuilding();
     }
 
 }

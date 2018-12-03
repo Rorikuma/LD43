@@ -13,17 +13,17 @@ public class Building : MonoBehaviour {
 
     void BuildHouse(GameObject g)
     {
-        g.GetComponent<Tile>().BuildHouse(HousePrefab);
+        g.GetComponent<Tile>().BuildHouse(HousePrefab, false);
     }
 
     void BuildWall(GameObject g)
     {
-        g.GetComponent<Tile>().BuildWall(WallPrefab);
+        g.GetComponent<Tile>().BuildWall(WallPrefab, false);
     }
 
     void BuildFarm(GameObject g)
     {
-        g.GetComponent<Tile>().BuildFarm(FarmPrefab);
+        g.GetComponent<Tile>().BuildFarm(FarmPrefab, false);
     }
 
     private void DestroyBuilding()
@@ -47,6 +47,7 @@ public class Building : MonoBehaviour {
             collidingWith = null;
         }
     }
+    
     private void Update()
     {
         if(collidingWith != null)

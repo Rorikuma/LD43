@@ -50,7 +50,7 @@ public class BuildingTiles : MonoBehaviour {
 
             if(i == (MapSize/2 - wallPos - 1) || i == (MapSize / 2 + wallPos - 1))
             {
-                currentTile.GetComponent<Tile>().BuildWall(WallPrefab);
+                currentTile.GetComponent<Tile>().BuildWall(WallPrefab, true);
             }
         }
     }

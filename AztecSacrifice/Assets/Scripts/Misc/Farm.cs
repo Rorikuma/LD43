@@ -14,6 +14,8 @@ public class Farm : MonoBehaviour {
         gm = FindObjectOfType<GManager>();
         pStats = FindObjectOfType<PlayerStats>();
 
+        FindObjectOfType<UnitManager>().RegisterBuilding(this.transform);
+
         spawnedDay = gm.Day;
     }
 
