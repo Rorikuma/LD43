@@ -43,7 +43,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1531502298372694
 GameObject:
   m_ObjectHideFlags: 0
@@ -75,7 +75,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1774205109573126
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,7 +96,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1950014281458190
 GameObject:
   m_ObjectHideFlags: 0
@@ -130,7 +130,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4028945661024806
 Transform:
   m_ObjectHideFlags: 1
@@ -360,8 +360,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ProjectilePrefabs:
   - {fileID: 1893168916642730, guid: 9545c3e5d72f1b240bfc462533463ff5, type: 2}
-  - {fileID: 1893168916642730, guid: 9545c3e5d72f1b240bfc462533463ff5, type: 2}
-  - {fileID: 1893168916642730, guid: 9545c3e5d72f1b240bfc462533463ff5, type: 2}
+  - {fileID: 1893168916642730, guid: 845d77263daec864d8ea77a4ba5d2e96, type: 2}
+  - {fileID: 1893168916642730, guid: c0dd37326f0bc3b4daf073b0248ca6ae, type: 2}
   Barrel: {fileID: 4083852631889442}
 --- !u!114 &114750307015828240
 MonoBehaviour:
@@ -388,13 +388,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NeverGetOld: 1
+  IsABuilding: 0
   Age: 0
   MovementSpeed: 100
   MaxHealth: 5
   AttackRange: 350
   AttackStrength: 50000
   Firerate: 1
-  damage: 1
+  Damage: 1
+  KidHealth: 5
+  AdultHealth: 10
+  OldHealth: 8
   KidFirerate: 2
   AdultFirerate: 1
   OldFirerate: 1.5

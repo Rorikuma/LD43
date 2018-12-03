@@ -16,11 +16,11 @@ public class AI_Stats : MonoBehaviour
     public float AttackRange = 500;
     public float AttackStrength = 1000;
     public float Firerate = 0.5f;
-    public int damage = 1;
+    public int Damage = 1;
 
-    int kidHealth = 5;
-    int adultHealth = 10;
-    int oldHealth = 8;
+    public int KidHealth = 5;
+    public int AdultHealth = 10;
+    public int OldHealth = 8;
 
     public float KidFirerate = 2f;
     public float AdultFirerate = 1f;
@@ -38,7 +38,7 @@ public class AI_Stats : MonoBehaviour
     {
         um = FindObjectOfType<UnitManager>();
         myTransform = this.transform;
-        MaxHealth = kidHealth;
+        MaxHealth = KidHealth;
         currentHealth = MaxHealth;
     }
 
@@ -51,15 +51,15 @@ public class AI_Stats : MonoBehaviour
             if (Age == Phase.Kid)
             {
                 Age = Phase.Adult;
-                MaxHealth = adultHealth;
-                currentHealth = adultHealth;
+                MaxHealth = AdultHealth;
+                currentHealth = AdultHealth;
                 Firerate = AdultFirerate;
             }
             else if (Age == Phase.Adult)
             {
                 Age = Phase.Old;
-                MaxHealth = oldHealth;
-                currentHealth = oldHealth;
+                MaxHealth = OldHealth;
+                currentHealth = OldHealth;
                 Firerate = OldFirerate;
             }
             else if (Age == Phase.Old)

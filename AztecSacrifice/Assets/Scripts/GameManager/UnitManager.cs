@@ -31,6 +31,22 @@ public class UnitManager : MonoBehaviour {
 
     Vector2 shrinePosition = Vector2.zero;
 
+
+    public void NotEnoughFood(int food)
+    {
+        int x = food;
+        while(x > 0)
+        {
+            if(defendersUnassigned.Count > 0)
+            {
+                foreach(AI_Defender d in defendersUnassigned)
+                {
+                    //if()
+                }
+            }
+        }
+    }
+
     void TryToAssign(List<AI_Defender> list, Phase a, Side s, out bool success)
     {
         bool succ = false;

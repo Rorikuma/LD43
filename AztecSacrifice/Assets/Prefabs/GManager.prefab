@@ -103,7 +103,7 @@ MonoBehaviour:
   EnemiesIncrease: 1
   MaxEnemiesPerNight: 40
   SpawnX: 1280
-  AttackerPrefab: {fileID: 1336340859890906, guid: 0e71d819209053948a86a3f31b95bbf7,
+  AttackerPrefab: {fileID: 1336340859890906, guid: b8d91bcdb99d0fa40a4860b003f0a75b,
     type: 2}
 --- !u!114 &114443975855346814
 MonoBehaviour:

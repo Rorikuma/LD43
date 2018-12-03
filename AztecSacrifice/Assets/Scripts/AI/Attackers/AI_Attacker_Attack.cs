@@ -14,11 +14,11 @@ public class AI_Attacker_Attack : MonoBehaviour {
         attackTimer = Time.time + stats.Firerate;
         if (brain.target.root.tag == "Player")
         {
-            brain.target.GetComponent<PlayerStats>().TakeDamage(stats.damage);
+            brain.target.GetComponent<PlayerStats>().TakeDamage(stats.Damage);
         }
         else
         {
-            brain.target.GetComponent<AI_Stats>().TakeDamage(stats.damage);
+            brain.target.GetComponent<AI_Stats>().TakeDamage(stats.Damage);
         }
     }
 

@@ -77,7 +77,7 @@ GameObject:
   - component: {fileID: 114744112797432130}
   - component: {fileID: 114655261539463786}
   - component: {fileID: 114619850488326702}
-  - component: {fileID: 114262910838742682}
+  - component: {fileID: 114552434943721406}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -257,17 +257,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wantsToJump: 0
---- !u!114 &114262910838742682
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1893427702143852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66d5ad042f1145e4a914a95db54c1798, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114268274195266272
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -279,7 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41237097441eae843829f635583d22cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DefenderPrefab: {fileID: 1774205109573126, guid: 0a83b67f5cda9e04c82bbf0406755aa2,
+  DefenderPrefab: {fileID: 1774205109573126, guid: adcbbe3c78ad6454987f0335c21f4164,
     type: 2}
 --- !u!114 &114337732069454396
 MonoBehaviour:
@@ -329,6 +318,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acfbf320538eb394f95a022a2293fbec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114552434943721406
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1893427702143852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c11ba0f1abd2adf448a1f752e047804d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114619850488326702
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -372,8 +372,8 @@ MonoBehaviour:
   GrabPosition: {fileID: 1905734642952962}
   Sprites:
   - {fileID: 21300000, guid: 43073307af6b175468fe51e7b6a382a5, type: 3}
-  - {fileID: 21300000, guid: 7f3b9d48a644eae4fb3b002a2347a393, type: 3}
-  - {fileID: 21300000, guid: c497ed4ae4ca6e547b152bccdf77cd23, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
   isCollidingWithDefender: 0
   isShrineColliding: 0
   Defender: {fileID: 0}

@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ChanceToSpawn: 0.75
-  DefenderPrefab: {fileID: 1774205109573126, guid: 0a83b67f5cda9e04c82bbf0406755aa2,
+  DefenderPrefab: {fileID: 1774205109573126, guid: adcbbe3c78ad6454987f0335c21f4164,
     type: 2}
   SR: {fileID: 212181108206182310}
   Notification: {fileID: 21300000, guid: 580195b6a1639dc4f9d564b7ce490f6e, type: 3}
