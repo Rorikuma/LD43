@@ -77,6 +77,7 @@ GameObject:
   - component: {fileID: 114744112797432130}
   - component: {fileID: 114655261539463786}
   - component: {fileID: 114619850488326702}
+  - component: {fileID: 114262910838742682}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -256,6 +257,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wantsToJump: 0
+--- !u!114 &114262910838742682
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1893427702143852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66d5ad042f1145e4a914a95db54c1798, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114268274195266272
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -303,6 +315,9 @@ MonoBehaviour:
   FaithPoints: 0
   Gold: 0
   Food: 0
+  HouseCost: 10
+  WallCost: 10
+  FarmCost: 10
 --- !u!114 &114397033948640536
 MonoBehaviour:
   m_ObjectHideFlags: 1
