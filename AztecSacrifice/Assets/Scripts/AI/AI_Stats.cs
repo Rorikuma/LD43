@@ -103,7 +103,7 @@ public class AI_Stats : MonoBehaviour
             else if (Age == Phase.Old)
             {
                 // TODO: Uncomment when making a final build
-                //Die();
+                Die();
             }
 
             UpdateHealthText();
