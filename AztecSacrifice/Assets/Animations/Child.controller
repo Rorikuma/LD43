@@ -7,7 +7,19 @@ AnimatorController:
   m_PrefabInternal: {fileID: 0}
   m_Name: Child
   serializedVersion: 5
-  m_AnimatorParameters: []
+  m_AnimatorParameters:
+  - m_Name: isWalking
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: Attack
+    m_Type: 9
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -131,16 +143,16 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 1102617940087638980}
-    m_Position: {x: 200, y: 0, z: 0}
+    m_Position: {x: 348, y: -12, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102489605589487582}
-    m_Position: {x: 235, y: 65, z: 0}
+    m_Position: {x: 576, y: 84, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102976633060525654}
-    m_Position: {x: 270, y: 130, z: 0}
+    m_Position: {x: 780, y: 252, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102018810822585634}
-    m_Position: {x: 305, y: 195, z: 0}
+    m_Position: {x: 636, y: 348, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
