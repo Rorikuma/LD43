@@ -423,8 +423,8 @@ MonoBehaviour:
   Gold: 100
   Food: 100
   HouseCost: 10
-  WallCost: 10
-  FarmCost: 10
+  WallCost: 50
+  FarmCost: 25
   HealthText: {fileID: 102790836692768558}
 --- !u!114 &114369060054052490
 MonoBehaviour:
@@ -437,7 +437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd3d396070f915a49a764bc001389fc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FireballCost: 1
+  FireballCost: 5
   FireballSpeed: 250
   MagicWallCost: 20
   HealingCost: 30
@@ -518,9 +518,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cac960666a2284a42b5a6daa7ca5defd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  KidPoints: 2
-  AdultPoints: 4
-  OldPoints: 1
+  KidPoints: 20
+  AdultPoints: 40
+  OldPoints: 10
   GrabPosition: {fileID: 1905734642952962}
   Sprites:
   - {fileID: 21300000, guid: 43073307af6b175468fe51e7b6a382a5, type: 3}

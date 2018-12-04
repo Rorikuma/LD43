@@ -100,8 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemiesPerNight: 10
-  EnemiesIncrease: 1
-  MaxEnemiesPerNight: 40
+  EnemiesIncrease: 2
+  MaxEnemiesPerNight: 50
   SpawnX: 1280
   AttackerPrefab: {fileID: 1336340859890906, guid: b8d91bcdb99d0fa40a4860b003f0a75b,
     type: 2}
