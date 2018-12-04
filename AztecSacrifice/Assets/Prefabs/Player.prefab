@@ -110,6 +110,7 @@ GameObject:
   - component: {fileID: 114619850488326702}
   - component: {fileID: 114552434943721406}
   - component: {fileID: 114369060054052490}
+  - component: {fileID: 114640352201179576}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -511,6 +512,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17f22ed4d5d79624485e76f2f661aad4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114640352201179576
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1893427702143852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c11ba0f1abd2adf448a1f752e047804d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114655261539463786
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -593,8 +605,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1134396253
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2e745a3fb22320048ba5513a47d930bb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
