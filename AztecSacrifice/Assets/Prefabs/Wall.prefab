@@ -68,7 +68,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1075055845115626}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 500, y: 0, z: 0}
+  m_LocalPosition: {x: -400, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4987012807751614}
@@ -96,7 +96,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1243936164796636}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 35, z: 0}
+  m_LocalPosition: {x: 0, y: 32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4048207238793084}
@@ -149,13 +149,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1cf7446bcd8f354997401cfe4715d7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NeverGetOld: 0
+  IsABuilding: 0
   Age: 0
   MovementSpeed: 100
   MaxHealth: 15
   AttackRange: 500
   AttackStrength: 1000
   Firerate: 0.5
-  damage: 1
+  Damage: 1
+  KidHealth: 5
+  AdultHealth: 10
+  OldHealth: 8
+  KidFirerate: 2
+  AdultFirerate: 1
+  OldFirerate: 1.5
+  GhostHealth: 15
+  IsAGhost: 0
+  CoinPrefab: {fileID: 0}
+  currentHealth: 5
+  HealthText: {fileID: 0}
 --- !u!212 &212440663701153506
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -236,7 +249,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: 76b8f1b00b235f04da39a8048facc501, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

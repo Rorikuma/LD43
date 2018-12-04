@@ -147,17 +147,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1cf7446bcd8f354997401cfe4715d7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NeverGetOld: 0
+  IsABuilding: 0
   Age: 0
   MovementSpeed: 100
   MaxHealth: 6
   AttackRange: 500
   AttackStrength: 1000
   Firerate: 1
-  damage: 1
+  Damage: 1
+  KidHealth: 5
+  AdultHealth: 10
+  OldHealth: 8
   KidFirerate: 2
   AdultFirerate: 1
   OldFirerate: 1.5
+  GhostHealth: 15
+  IsAGhost: 0
   CoinPrefab: {fileID: 1752171307109420, guid: ba88981eaf991c84fa1524b3bc6447d1, type: 2}
+  currentHealth: 5
+  HealthText: {fileID: 0}
 --- !u!114 &114520961470671358
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -227,7 +236,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 20
+  m_SortingOrder: 50
   m_Sprite: {fileID: 21300000, guid: 0b41ccfb636bd4640b57b02b6479cbbf, type: 3}
   m_Color: {r: 0.6415094, g: 0, b: 0, a: 1}
   m_FlipX: 0
