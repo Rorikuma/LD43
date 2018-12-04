@@ -88,6 +88,10 @@ MonoBehaviour:
   MaxAlpha: 0.5
   Day: 1
   NightSprite: {fileID: 212426148372496906}
+  MusicPlayerPrefab: {fileID: 1818284174264712, guid: ab0d067c0890bf649afec93c74582103,
+    type: 2}
+  SoundsPlayerPrefab: {fileID: 1626555190016280, guid: d1c1d47150164194a86f7d7dc5645281,
+    type: 2}
 --- !u!114 &114173070505956500
 MonoBehaviour:
   m_ObjectHideFlags: 1

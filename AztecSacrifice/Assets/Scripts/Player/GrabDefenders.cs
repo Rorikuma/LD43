@@ -26,6 +26,8 @@ public class GrabDefenders : MonoBehaviour {
 
     Phase grabbedPhase;
 
+    public AudioClip SacrificeClip;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Shrine")
@@ -87,6 +89,8 @@ public class GrabDefenders : MonoBehaviour {
                 GrabPosition.GetComponent<SpriteRenderer>().sprite = null;
                 break;
         }
+
+        FindObjectOfType<Sounds>().PlayClip(SacrificeClip);
 
         gm.SacrificedToday();
     }

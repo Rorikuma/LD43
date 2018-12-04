@@ -16,6 +16,9 @@ public class GManager : MonoBehaviour
 
     public SpriteRenderer NightSprite;
 
+    public GameObject MusicPlayerPrefab;
+    public GameObject SoundsPlayerPrefab;
+
     SpawnAttackers sa;
     PlayerStats ps;
 
@@ -73,6 +76,13 @@ public class GManager : MonoBehaviour
         ps = FindObjectOfType<PlayerStats>();
         sa = GetComponent<SpawnAttackers>();
         NightSprite.color = new Color(NightSprite.color.r, NightSprite.color.g, NightSprite.color.b, 0);
+
+        if(FindObjectOfType<Music>() == null)
+        {
+            Instantiate(MusicPlayerPrefab, Vector3.zero, Quaternion.identity);
+        }
+
+        Instantiate(SoundsPlayerPrefab, Vector3.zero, Quaternion.identity);
     }
 
     void ControlDayAndNight()
