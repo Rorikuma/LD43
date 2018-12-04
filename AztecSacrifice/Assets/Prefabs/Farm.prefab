@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a0284b88e6f14046b0153eb834c669e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FoodIncrease: 1
+  FoodIncrease: 10
   Notification: {fileID: 21300000, guid: 580195b6a1639dc4f9d564b7ce490f6e, type: 3}
   NotificationRenderer: {fileID: 212657299944729094}
 --- !u!212 &212657299944729094

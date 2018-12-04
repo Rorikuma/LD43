@@ -421,7 +421,7 @@ MonoBehaviour:
   MaxHealth: 20
   FaithPoints: 100
   Gold: 100
-  Food: 100
+  Food: 40
   HouseCost: 10
   WallCost: 50
   FarmCost: 25
